@@ -1,7 +1,7 @@
 #include <MCP4725.h>
 #include <HX711.h>
 #include <Wire.h>
-#include <cmdArduino.h>
+#include "cmdArduino.h"
 #include "connections.h"
 #include "settings.h"
 

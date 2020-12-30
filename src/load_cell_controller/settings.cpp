@@ -1,6 +1,5 @@
 #include <Arduino.h>
 #include <EEPROM.h>
-#include <cmdArduino.h>
 #include "settings.h"
 #include "configuration.h"
 

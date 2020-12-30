@@ -39,14 +39,13 @@ I'd recommend you put all the components on a breadboard and upload the sketch f
 
 ## Software
 
-I used the Arduino IDE to modify [Skidude88's](https://github.com/Skidude88/Skidude88-G29-PS4-LoadCell-Arduino) sketch (Code/SimPedal_ver3_dac-3.3v_board_withFW_Adjust.ino). 
+I used the Arduino IDE to modify [Skidude88's](https://github.com/Skidude88/Skidude88-G29-PS4-LoadCell-Arduino) sketch (Code/SimPedal_ver3_dac-3.3v_board_withFW_Adjust.ino). The source files also include a modified version of the "cmdArduino" Library by Akiba and Jacinta.
 
 1. Install the Arduino IDE
 2. Open the code located in src/load_cell_controller (load_cell_controller.ino)
 3. The code requires some libraries. Install them by navigating to "Sketch > Include Library > Manage Libraries"
    1. "HX711 Arduinio Library" by Bogdan Necula and Andreas Motl
    2. "MCP4725" by Rob Tillaart
-   3. "cmdArduino" by Akiba and Jacinta
 4. Select the correct in the "Tools" menu
    * Board: "Arduino AVR Boards > Arduino Pro or Pro Mini"
    * Processor: "ATmega328P (3.3V, 8MHz)"
