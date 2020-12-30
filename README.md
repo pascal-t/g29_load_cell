@@ -1,5 +1,7 @@
 # G29 Load Cell Mod
-A cheap Load Cell Mod for the G29 based on the projects of [GeekyDeaks](https://github.com/GeekyDeaks/g29-load-cell) and [Skidude88](https://github.com/Skidude88/Skidude88-G29-PS4-LoadCell-Arduino). All referenced files will not be hotlinked, so you'll have to at least look at the work they have done.
+A cheap Load Cell Mod for the G29 based on the projects of [GeekyDeaks](https://github.com/GeekyDeaks/g29-load-cell) and [Skidude88](https://github.com/Skidude88/Skidude88-G29-PS4-LoadCell-Arduino). All referenced files will not be hotlinked, so you'll have to at least look at the work they have done. 
+
+The Software and electronics will also work for [jstoezel's](https://github.com/jstoezel/brake_pedal_beam_load_cell) mod using a dual beam load cell. I ordered one and will update this repository it arrives.
 
 ## Shopping list
 * load cell and HX711 module ([example](https://usa.banggood.com/4pcs-DIY-50KG-Body-Load-Cell-Weight-Strain-Sensor-Resistance-With-HX711-AD-Module-p-1326815.html))
