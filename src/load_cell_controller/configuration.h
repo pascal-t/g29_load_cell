@@ -43,7 +43,3 @@
 //                        |               |GRADIENT_POSITION
 //                        |
 //                        |DEADZONE_MIN
-
-// Calculated Values, do not change
-#define DEADZONE_RANGE (DEADZONE_MAX - DEADZONE_MIN)
-#define GRADIENT_POSITION_ABSOLUTE (DEADZONE_MIN + DEADZONE_RANGE * GRADIENT_POSITION)
