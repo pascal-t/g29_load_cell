@@ -1,5 +1,5 @@
 //config version. The configuration will only be applied if this version is greater than a previous loaded version.
-#define CONFIG_VERSION 1
+#define CONFIG_VERSION 0
 
 //The minimum deadzone of the load cell. All values below will be ignored and result in 0% output (below the specified OUTPUT_MIN)
 #define DEADZONE_MIN 1000.0
