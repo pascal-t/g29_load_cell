@@ -17,6 +17,18 @@ I ordered a pack of load cells that didn't include the HX711 module. Just like t
 * crimping tool (optional, I crimped the connections to the load cell)
 * PCBs to solder all the parts to (I guess you could just solder them together, but that would be messy)
 
+## 3D Printing
+
+I used the single_holder.stl, plunger_bottom.stl, plunger_top.stl and plunger_spacer_10mm.stl ?? from [GeekyDeaks'](https://github.com/GeekyDeaks/g29-load-cell) project, without any changes. You can find the files in his stl folder.
+
+I sliced the models using the "0.20mm Normal" profile for my Ender3. There are plenty resources out there showing how you can use a non Prusa machine with the Prusa Slicer. Here are the modifications I made.
+
+1. Using the "Place on face" option, I oriented the single_holder.stl so it lays flat on the angled face opposite of the slot where the load cell will go. That way it uses minimal support material.
+2. Print Settings (with at least Advanced settings enabled in the top right)
+   1. Under "Layers and perimeters" I increased the Perimeters to 4 and the Top and Bottom Solid layers to 6
+   2. Under "Support material" I increased the XY separation between an object and ist support to 100% because in my experience the supports tend to stick to the object.
+   3. (optional) Under "Skirt and brimn" I increased the Loops to 2, the Distance from object to 7mm and the Skirt height to 1 layer (I find the Skirt too close for comfort)
+
 ## Wiring
 
 //WIP
