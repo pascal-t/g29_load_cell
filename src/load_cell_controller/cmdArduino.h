@@ -62,7 +62,6 @@ public:
     uint32_t conv(char *str, uint8_t base=10);
 
 private:
-    void display();
     void parse(char *cmd);
     void handler();    
 };

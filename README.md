@@ -52,7 +52,7 @@ I used the Arduino IDE to modify [Skidude88's](https://github.com/Skidude88/Skid
    * Port: The COM port of the serial adapter. Check the Device Manager if you are unsure
 5. In the darker toolbar click the arrow (Upload) to upload the sketch to the board
 6. In the same toolbar, click the icon on the far right to open the serial monitor
-   * At the bottom of the window set the line ending to "Carriage return" (TODO accept Newline)
+   * At the bottom of the window set the line ending to "Newline"
    * After startup the board outputs the current settings. If you missed it, reset the board or type "GET"
   
 Thats it. You can now play around with the command line in the serial monitor. 
@@ -96,7 +96,7 @@ The command line is useful for debugging and setting up the pedals. Here is a li
 # TODO
 * Wiring
 * HX711 80hz mode?
-* Modifying the CMD Lib to reduce clutter and accept newline as command terminator
+* Modifying the CMD Lib to reduce clutter and accept newline as command terminator ✔
 * GUI for tuning
 * Better pressure curve?
 * Custom PCB?

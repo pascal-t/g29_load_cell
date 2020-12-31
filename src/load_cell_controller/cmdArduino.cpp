@@ -55,9 +55,7 @@ static uint8_t *msg_ptr;
 static cmd_t *cmd_tbl_list, *cmd_tbl;
 
 // text strings for command prompt (stored in flash)
-const char cmd_banner[] PROGMEM = "*************** CMD *******************";
-const char cmd_prompt[] PROGMEM = "CMD >> ";
-const char cmd_unrecog[] PROGMEM = "CMD: Command not recognized.";
+const char cmd_unrecog[] PROGMEM = "CMD: Command not recognized: ";
 
 Cmd cmd;
 
@@ -69,24 +67,6 @@ Cmd cmd;
 Cmd::Cmd()
 {
 
-}
-
-/**************************************************************************/
-/*!
-    Generate the main command prompt
-*/
-/**************************************************************************/
-void Cmd::display()
-{
-    char buf[50];
-
-    Serial.println();
-
-    strcpy_P(buf, cmd_banner);
-    Serial.println(buf);
-
-    strcpy_P(buf, cmd_prompt);
-    Serial.print(buf);
 }
 
 /**************************************************************************/
@@ -123,17 +103,14 @@ void Cmd::parse(char *cmd)
         if (!strcmp(argv[0], cmd_entry->cmd))
         {
             cmd_entry->func(argc, argv);
-            display();
             return;
         }
     }
 
     // command not recognized. print message and re-generate prompt.
     strcpy_P(buf, cmd_unrecog);
-    Serial.println(buf);
+    Serial.print(buf);
     Serial.println(argv[0]);
-
-    display();
 }
 
 /**************************************************************************/
@@ -149,11 +126,11 @@ void Cmd::handler()
 
     switch (c)
     {
-    case '\r':
+    case '\n':
         // terminate the msg and reset the msg ptr. then send
         // it to the handler for processing.
         *msg_ptr = '\0';
-        Serial.print("\r\n");
+        Serial.print("\n");
         parse((char *)msg);
         msg_ptr = msg;
         break;

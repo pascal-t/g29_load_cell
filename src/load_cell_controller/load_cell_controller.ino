@@ -27,12 +27,15 @@ Settings settings;
 
 void setup() {
   cmd.begin(9600);
-  brake_pedal.begin(LOADCELL_DOUT_PIN, LOADCELL_SCK_PIN);
-  DAC.begin();
-  
   settings.load();
+  
+  brake_pedal.begin(LOADCELL_DOUT_PIN, LOADCELL_SCK_PIN);
   brake_pedal.tare(10);
+  Serial.println("Loadcell initialized");
+  
+  DAC.begin();
   DAC.writeDAC(settings.output_min);
+  Serial.println("DAC initialized");
   
   cmd.add(COMMAND_GET, get);
   cmd.add(COMMAND_SET, set);
@@ -44,6 +47,8 @@ void setup() {
   cmd.add(COMMAND_TEST, test);
   cmd.add(COMMAND_HELP, help);
   //TWBR = 12;                        // Seems OK at 100kbps, otherwise MCP4725 can run at 400KHz using TWBR=12
+
+  Serial.println("Setup complete");
 }
 
 void loop() {
