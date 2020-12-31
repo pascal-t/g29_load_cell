@@ -83,10 +83,15 @@ uint16_t convertToDacValue(double loadCellValue) {
   }
 
   if (loadCellValue < settings.gradient_position_absolute) {
-    return map(loadCellValue, settings.deadzone_min, settings.gradient_position_absolute, settings.output_min, settings.gradient_output);
+    return (uint16_t)mapDouble(loadCellValue, settings.deadzone_min, settings.gradient_position_absolute, settings.output_min, settings.gradient_output);
   } else {
-    return map(loadCellValue, settings.gradient_position_absolute, settings.deadzone_max, settings.gradient_output, settings.output_max);
+    return (uint16_t)mapDouble(loadCellValue, settings.gradient_position_absolute, settings.deadzone_max, settings.gradient_output, settings.output_max);
   }
+}
+
+//https://www.arduino.cc/reference/en/language/functions/math/map/ but for doubles
+double mapDouble(double x, double in_min, double in_max, double out_min, double out_max) {
+  return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
 }
 
 void get(int arg_count, char **args) {
