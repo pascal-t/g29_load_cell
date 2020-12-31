@@ -92,6 +92,8 @@ The command line is useful for debugging and setting up the pedals. Here is a li
   * Awkwardly wire the connections anyways
   * Use Software I2C
   * Custom PCB
+* Setup did not complete (I implemented a log message for that)
+  * Make sure the pins on the HX711 and DAC are plugged in correctly
 
 # TODO
 * Wiring
