@@ -8,6 +8,13 @@ The software and electronics will also work for [jstoezel's](https://github.com/
 * 3.3V ATmega328P-AU Pro Mini ([example](https://www.banggood.com/3Pcs-3_3V-8MHz-ATmega328P-AU-Pro-Mini-Microcontroller-With-Pins-Development-Board-p-980290.html)) you can use a 5V version, but that would need a separate power supply
 * MCP4725 DAC ([example](https://www.banggood.com/3Pcs-CJMCU-MCP4725-I2C-DAC-Development-Board-Module-p-1051690.html))
 
+Updated List:
+
+* HX711 load cell amplifier with 80Hz option (example: [ebay](https://www.ebay.com/itm/2PCS-HX711-Dual-Channel-24-Bit-Precision-A-D-Module-Pressure-For-Arduino-NEW/153891441697?hash=item23d4a50c21:g:uroAAOSweqpejcsC), [archive for reference](https://archive.is/sDvCP))
+* 3.3V Arduino Pro Micro (example: [ebay](https://www.ebay.com/itm/Leonardo-Pro-Micro-ATmega32U4-8MHz-3-3V-Replace-ATmega328-Arduino-Pro-Mini/132482990781?hash=item1ed89a02bd:g:SvMAAOSwe0NZvy0b), [archive for reference](https://archive.is/KmKOC))
+* Parallel Beam Loadcell (for jstoezel's mod) (example: [ebay](https://www.ebay.com/itm/Parallel-Beam-Load-Cell-Sensor-100kg-217lb-Scale-Weighing-Sensor-0-02-Precision/171164724453?hash=item27da366ce5:g:YPEAAOSwuhhXXVLu), [archive for reference](https://archive.is/HyUL8))
+* MCP4725 DAC (example: [banggood](https://www.banggood.com/3Pcs-CJMCU-MCP4725-I2C-DAC-Development-Board-Module-p-1051690.html), [archive for reference](https://archive.is/VqeZv))
+
 I ordered a pack of load cells that didn't include the HX711 module. Just like the other parts I ordered multiple of them. In total I payed around 30€ for enough parts to mod 3 pedals (I like to get more in case I brak stuff, and I'll make a second one for a friend)
 
 ## Tools / Small parts
