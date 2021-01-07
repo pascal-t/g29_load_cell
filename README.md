@@ -28,15 +28,28 @@ I ordered a pack of load cells that didn't include the HX711 module. Just like t
 
 ## 3D Printing
 
-I used the single_holder.stl, plunger_bottom.stl, plunger_top.stl and plunger_spacer_10mm.stl ?? from [GeekyDeaks'](https://github.com/GeekyDeaks/g29-load-cell) project, without any changes. You can find the files in his stl folder.
+I used the files from [GeekyDeaks'](https://github.com/GeekyDeaks/g29-load-cell) project, without any changes. You can find the files in his stl folder.
 
-I sliced the models using the "0.20mm Normal" profile for my Ender3. There are plenty resources out there showing how you can use a non Prusa machine with the Prusa Slicer. Here are the modifications I made.
+I sliced the models using the "0.20mm Normal" profile for my Ender3. There are plenty resources out there showing how you can use a non Prusa machine with the Prusa Slicer. I set the settings mode to "Advanced" to access all the settings I modified.
+
+Here are the print settings I modified for the single_holder.stl :
 
 1. Using the "Place on face" option, I oriented the single_holder.stl so it lays flat on the angled face opposite of the slot where the load cell will go. That way it uses minimal support material.
-2. Print Settings (with at least Advanced settings enabled in the top right)
-   1. Under "Layers and perimeters" I increased the Perimeters to 4 and the Top and Bottom Solid layers to 6
-   2. Under "Support material" I increased the XY separation between an object and ist support to 100% because in my experience the supports tend to stick to the object.
-   3. (optional) Under "Skirt and brimn" I increased the Loops to 2, the Distance from object to 7mm and the Skirt height to 1 layer (I find the Skirt too close for comfort)
+2. Under "Layers and perimeters" I increased the Perimeters to 4 and the Top and Bottom Solid layers to 6
+3. Under "Support material" I increased the XY separation between an object and ist support to 100% because in my experience the supports tend to stick to the object.
+4. (optional) Under "Skirt and brimn" I increased the Loops to 2, the Distance from object to 7mm and the Skirt height to 1 layer (I find the Skirt too close for comfort)
+   
+For the plunger I printed the plunger_bottom.stl, plunger_top.stl and plunger_spacer_15mm.stl to achive a small amount of travel before hitting the rubber damper (about 3mm). To get no travel at all you would need a shorter spacer than the 5mm one, or you need to cut off a small piece of the rubber damper. I believe you can make the brake feel harder by shortening the rubber damper, at least that's what GeekyDeaks did.
+
+Here are the modifications I made on top of the ones mentioned above:
+
+1. I rotated all parts so the indentation is at the bottom.
+2. I added supports only to the plunger_bottom.stl by clicking the "Editing" column in the parts overview and selecting "Support material"
+   1. In the area below the parts overview I checked "Generate support material", "Auto generated supports" and "Support on build plate only"
+   2. Make sure to place the part away from the others so the first layer of the support material does not stick to other parts
+3. Under Advanced I had to set the "XY Size Compensation" to -0.1 mm.
+
+After printing I still had to file down the sides of the connectors so they will fit together.
 
 ## Wiring
 
