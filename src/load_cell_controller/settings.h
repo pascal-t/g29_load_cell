@@ -49,6 +49,7 @@ class Settings {
         void printOptionsHelp();
         void printSetHelp();
         void printGetHelp();
+        void setCalculatedValues();
         int saveToEeprom(int pos, byte *value, int length);
         int getFromEeprom(int pos, byte *value, int length);
 };

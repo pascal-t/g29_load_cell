@@ -22,17 +22,21 @@ int Settings::getFromEeprom(int pos, byte *value, int length) {
   return pos + length;
 }
 
+void Settings::setCalculatedValues() {
+  deadzone_range = deadzone_max - deadzone_min;
+  gradient_position_absolute = deadzone_min + deadzone_range * gradient_position;
+}
+
 void Settings::load(int arg_cnt = 0, char **args = NULL) {
   int pos = CONFIG_START;
   pos = getFromEeprom(pos, (byte*)&config_version, sizeof(config_version));
   pos = getFromEeprom(pos, (byte*)&deadzone_min, sizeof(deadzone_min));
   pos = getFromEeprom(pos, (byte*)&deadzone_max, sizeof(deadzone_max));
-  deadzone_range = deadzone_max - deadzone_min;
   pos = getFromEeprom(pos, (byte*)&output_min, sizeof(output_min));
   pos = getFromEeprom(pos, (byte*)&output_max, sizeof(output_max));
   pos = getFromEeprom(pos, (byte*)&gradient_position, sizeof(gradient_position));
-  gradient_position_absolute = deadzone_min + deadzone_range * gradient_position;
   pos = getFromEeprom(pos, (byte*)&gradient_output, sizeof(gradient_output));
+  setCalculatedValues();
 
   if (config_version < CONFIG_VERSION || (CONFIG_VERSION == 0 && CONFIG_VERSION != config_version)) {
     Serial.println("configuration.h version is newer than EEPROM. Applying changes.");
@@ -58,12 +62,11 @@ void Settings::reset(int arg_cnt = 0, char **args = NULL) {
   config_version = CONFIG_VERSION;
   deadzone_min = DEADZONE_MIN;
   deadzone_max = DEADZONE_MAX;
-  deadzone_range = deadzone_max - deadzone_min;
   output_min = OUTPUT_MIN;
   output_max = OUTPUT_MAX;
   gradient_position = GRADIENT_POSITION;
-  gradient_position_absolute = deadzone_min + deadzone_range * gradient_position;
   gradient_output = GRADIENT_OUTPUT;
+  setCalculatedValues();
 }
 
 void Settings::printOptionsHelp() {
@@ -161,5 +164,6 @@ void Settings::set(int arg_cnt, char **args) {
     return;
   }
 
+  setCalculatedValues();
   print(arg_cnt, args);
 }

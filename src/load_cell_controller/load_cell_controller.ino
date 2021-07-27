@@ -74,7 +74,7 @@ uint16_t convertToDacValue(double loadCellValue) {
   } 
 
   if (lockDac) {
-    Serial.println("lockDac = true");
+    Serial.println("lockDac = false");
     lockDac = false;
   }
   
